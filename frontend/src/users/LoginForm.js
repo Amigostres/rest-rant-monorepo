@@ -29,6 +29,7 @@ function LoginForm() {
     
         if (response.status === 200) {
             setCurrentUser(data.user)
+            localStorage.setItem('token', data.token)
             history.push(`/`) //this will redirect me to home again :D
         } else {
             setErrorMessage(data.message)
